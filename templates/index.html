@@ -7,36 +7,33 @@
   }
 </style>
 <body class="bg-light">
-  <div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-8 col-lg-6">
-        <div class="card shadow">
-          <div class="card-header text-center bg-primary text-white">
-            <h2>Email Spam Classifier</h2>
+  <div class="d-flex justify-content-center align-items-center min-vh-100" style="background: linear-gradient(to right, #e0f7fa, #e1bee7);">
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 600px;">
+      <div class="card-header text-center bg-primary text-white">
+        <h2>Email Spam Classifier</h2>
+      </div>
+      <div class="card-body">
+        <form method="POST">
+          <div class="mb-3">
+            <label for="subject" class="form-label">Email Subject</label>
+            <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter email subject">
           </div>
-          <div class="card-body">
-            <form method="POST">
-              <div class="mb-3">
-                <label for="subject" class="form-label">Email Subject</label>
-                <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter email subject">
-              </div>
-              <div class="mb-3">
-                <label for="body" class="form-label">Email Body</label>
-                <textarea class="form-control" id="body" name="body" rows="5" placeholder="Enter email body..."></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="btn btn-success">Classify Email</button>
-              </div>
-            </form>
+          <div class="mb-3">
+            <label for="body" class="form-label">Email Body</label>
+            <textarea class="form-control" id="body" name="body" rows="5" placeholder="Enter email body..."></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-success px-4">Classify Email</button>
+          </div>
+        </form>
 
-            {% if prediction %}
-            <div class="alert mt-4 text-center {% if prediction == 'Spam' %}alert-danger{% else %}alert-success{% endif %}">
-              <strong>Result:</strong> This email is classified as <strong>{{ prediction }}</strong>.
-            </div>
-            {% endif %}
-          </div>
+        {% if prediction %}
+        <div class="alert mt-4 text-center {% if prediction == 'Spam' %}alert-danger{% else %}alert-success{% endif %}">
+          <strong>Result:</strong> This email is classified as <strong>{{ prediction }}</strong>.
         </div>
+        {% endif %}
       </div>
     </div>
   </div>
 </body>
+
