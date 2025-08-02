@@ -41,6 +41,12 @@ body {
     margin-top: 8px;
     color: #e0e0e0;
 }
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
 /* Input fields */
 .form-control {
