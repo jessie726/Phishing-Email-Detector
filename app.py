@@ -7,13 +7,16 @@ model = joblib.load("spam_detector.pkl")
 @app.route("/", methods=["GET", "POST"])
 def home():
     prediction = None
+    subject = ""
+    body = ""
+    
     if request.method == "POST":
         subject = request.form.get("subject", "")
         body = request.form.get("body", "")
         email_text = subject + " " + body
         pred = model.predict([email_text])[0]
         prediction = "Spam" if pred == 1 else "Ham"
-    return render_template("index.html", prediction=prediction)
+    return render_template("index.html", prediction=prediction, subject=subject, body=body)
 
 import os
 
