@@ -24,8 +24,8 @@ html, body {
     max-width: 600px;
     background-color: #ffffff;
     padding: 30px 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Header section of the card */
