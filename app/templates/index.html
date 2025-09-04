@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Email Spam Classifier</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body class="bg-light">
+    <div class="wrapper">
+        <div class="card shadow">
+            <div class="card-header text-center bg-primary text-white">
+                <h2 class="mb-0"><i class="bi bi-envelope-fill"></i> Email Spam Classifier</h2>
+                <p class="text-white-50 mb-0">Instantly detect if an email is spam or not</p>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">✉️ Email Subject</label>
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter email subject" value="{{ subject }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="body" class="form-label">📝 Email Body</label>
+                        <textarea class="form-control" id="body" name="body" rows="5" placeholder="Enter email body">{{ body }}</textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary w-100">🔍 Classify Email</button>
+                    </div>
+                </form>
+                {% if prediction %}
+                <div class="alert mt-4 text-center
+                    {% if prediction == 'Spam' %} alert-danger
+                    {% else %} alert-success
+                    {% endif %}">
+                    <strong>Result:</strong> This email is classified as <strong>{{ prediction }}</strong>.
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
