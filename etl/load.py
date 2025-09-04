@@ -30,7 +30,7 @@ def load_pipeline(
         gdown.download(url, model_path, quiet=False)
 
     # Load model
-    model = load_model(model_path)
+    model = load_model(model_path, compile=False)
 
     # Load tokenizer
     if not os.path.exists(tokenizer_path):
