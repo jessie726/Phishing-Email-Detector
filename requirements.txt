@@ -1,24 +1,36 @@
 # Core
-numpy>=1.24
-pandas>=2.0
-scipy>=1.10
-scikit-learn==1.5.2
+numpy
+pandas
+scipy
+scikit-learn
 
-# Deep Learning
-tensorflow-cpu==2.15.0
-torch>=2.0,<2.2
-transformers==4.44.2
+# NLP & Transformers
+torch
+transformers
+tqdm
 
-# Utils
-tqdm==4.66.5
-joblib==1.5.1
-gdown==5.2.0
+# Visualization (optional, only needed if you plan to plot locally)
+matplotlib
+seaborn
 
-# Visualization
-matplotlib==3.9.2
-seaborn==0.13.2
+# Web app (Flask backend)
+Flask
+Werkzeug
+Jinja2
+itsdangerous
+click
+blinker
 
-# Web app
-Flask==3.1.1
+# Utilities
+joblib
+python-dateutil
+pytz
+threadpoolctl
+six
+MarkupSafe
+tzdata
 
+# Extra
+gdown
+tensorflow-cpu
 
