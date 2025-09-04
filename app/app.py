@@ -3,7 +3,12 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from etl.load import load_pipeline   # assuming you save it as load_utils.py
 
 # Load once at startup
-model, tokenizer, MAXLEN = load_pipeline()
+model, tokenizer, MAXLEN = load_pipeline(
+    model_path="final_models/final_lstm.h5",
+    tokenizer_path="final_models/tokenizer.pkl",
+    drive_id="1G0VwRzWS2LmRfjSkkts8gbj902XJuA36",  # your Google Drive file ID
+    maxlen=120
+)
 
 app = Flask(__name__)
 
