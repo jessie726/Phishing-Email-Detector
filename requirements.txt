@@ -8,6 +8,7 @@ scikit-learn
 torch
 transformers
 tqdm
+nltk
 
 # Visualization (optional, only needed if you plan to plot locally)
 matplotlib
