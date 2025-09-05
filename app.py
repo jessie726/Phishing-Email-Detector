@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from etl.load import load_pipeline   # assuming you save it as load_utils.py
+from etl.load import load_pipeline 
 
 # Load once at startup
 model, tokenizer, MAXLEN = load_pipeline(
