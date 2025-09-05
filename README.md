@@ -13,5 +13,7 @@ Can be loaded quickly with joblib or pickle.
 
 Runs well on Render.
 
+Render app is deployed from your GitHub repo (phishing_email_detector_rendor)
+
 This is mainly for getting a working visible website.
 https://phishing-email-detector-3e4y.onrender.com
