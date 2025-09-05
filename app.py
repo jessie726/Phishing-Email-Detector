@@ -6,7 +6,7 @@ from etl.load import load_pipeline   # assuming you save it as load_utils.py
 model, tokenizer, MAXLEN = load_pipeline(
     model_path="final_models/final_lstm.h5",
     tokenizer_path="final_models/tokenizer.pkl",
-    drive_id="1G0VwRzWS2LmRfjSkkts8gbj902XJuA36",  # your Google Drive file ID
+    drive_id="1G0VwRzWS2LmRfjSkkts8gbj902XJuA36",
     maxlen=120
 )
 
@@ -22,7 +22,7 @@ def home():
 
         # Transform input
         seq = tokenizer.texts_to_sequences([email_text])
-        padded = pad_sequences(seq, maxlen=MAXLEN)
+        padded = pad_sequences(seq, maxlen=120)
 
         # Predict
         pred = model.predict(padded)[0][0]
